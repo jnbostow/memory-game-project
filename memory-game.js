@@ -6,6 +6,8 @@ function memoryGame() {
     let makeGameCardAction = gameCardAction();
     let gameTimerAction = gameTimer();
 
+    //Calls functions to randomly generate tiles, starts the timer and adds
+    // the event listeners
     iconGenerator();
     gameTimerAction.startTime();
     addEventListeners();
@@ -24,6 +26,7 @@ function memoryGame() {
         });
     }
 
+    //randomly assign icons to tiles and update DOM
     function iconGenerator() {
         let gameIcons = ['frog', 'crown', 'bomb', 'glasses', 'gem', 'kiwi-bird', 'rocket', 'umbrella',
             'frog', 'crown', 'bomb', 'glasses', 'gem', 'kiwi-bird', 'rocket', 'umbrella'];
@@ -43,6 +46,8 @@ function memoryGame() {
         });
     }
 
+    //removes winning game message, generates new random tiles, resets stars
+    // and moves in panel, restarts timer
     function gameReset() {
         const winGameElem = document.querySelector('.win-msg-container');
         const gameBoard = document.querySelector('.game-board');
@@ -54,6 +59,7 @@ function memoryGame() {
         gameTimerAction.startTime();
     }
 
+    //controller for game cards and tracks if they are a match
     function gameCardAction() {
         let prevSelectedCardElem = '';
         let matchCount = 7;
@@ -103,6 +109,7 @@ function memoryGame() {
         };
     }
 
+    //controller for game panel, updates stars and moves
     function updateGamePanel() {
         let movesCounter = 0;
         const starElems = document.querySelector('.stars');
@@ -114,8 +121,8 @@ function memoryGame() {
             starRating(movesCounter);
         }
 
+        //changes star element icons based on number of moves
         function starRating(numMoves) {
-
             if (numMoves < 8) {
                 starElems.children[0].className = 'fas fa-star';
                 starElems.children[1].className = 'fas fa-star';
@@ -134,12 +141,13 @@ function memoryGame() {
                 starElems.children[1].className = 'far fa-star';
                 starElems.children[2].className = 'far fa-star';
             }
-
         }
 
+        //exposes function to update moves and stars so variables are private
         return updateMoves;
     }
 
+    //controller for game timer, exposes functions to start and stop timer
     function gameTimer() {
         let timeCounter = 0;
         const timerElem = document.querySelector('.timer');
@@ -147,6 +155,8 @@ function memoryGame() {
         let minutesLapsed = 0;
         let timeInterval = '';
 
+        //increments time in minutes and seconds format
+        //TODO: add a time out message if over 60 minutes
         function incrementTime(timeVar = null) {
             timeCounter = timeVar === null? timeCounter + 1 : timeVar;
 
@@ -159,6 +169,7 @@ function memoryGame() {
             timerElem.textContent = minutesLapsed + ':' + secondsLapsed;
         }
 
+        //exposes functions so that variables are private
         return {
             startTime: function() {
                 timeInterval && clearInterval(timeInterval);
@@ -171,22 +182,28 @@ function memoryGame() {
         }
     }
 
+    //controller for Winning Game Message, displays game message and stops timer
     function gameWinAction(matchNum) {
-        let gameBoard = '';
+        let gameBoard = '', winMsgElem = '', winGameDetails = '', scorePanel = '', timer ='';
+
         if (matchNum === 8) {
             gameTimerAction.stopTime();
 
+            //getting DOM elements
             winMsgElem = document.querySelector('.win-msg-container');
             gameBoard = document.querySelector('.game-board');
             winGameDetails = document.querySelector('.win-game-details');
             scorePanel = document.querySelector('.stars').cloneNode(true);
             timer = document.querySelector('.timer').cloneNode(true);
 
+            //adding class to trigger CSS styles for winning game
             gameBoard.classList.add('win-game');
             winMsgElem.classList.add('win-game');
 
+            //removes any previously added panel elements
             winGameDetails.innerHTML = '';
 
+            //adding cloned elements from game panel to Winning Game message
             winGameDetails.appendChild(scorePanel);
             winGameDetails.appendChild(timer);
         }
