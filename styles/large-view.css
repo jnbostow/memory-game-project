@@ -1,0 +1,23 @@
+.game-container {
+    /*margin-left: 0;*/
+    /*margin-right: 0;*/
+    max-width: 600px;
+    margin: auto;
+}
+
+.stars, .moves {
+    padding-right: 15px;
+}
+
+.game-board {
+    grid-template-columns: 125px 125px 125px 125px;
+    grid-template-rows: 125px 125px 125px 125px;
+    height: 600px;
+    grid-gap: 20px;
+    padding: 20px;
+    box-shadow: 4px 4px 7px 0px rgba(4, 4, 4, 0.5);
+}
+
+.win-game.win-msg-container {
+    font-size: 10em;
+}

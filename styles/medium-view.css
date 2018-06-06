@@ -1,0 +1,30 @@
+.game-container {
+    margin: 0;
+}
+h1 {
+    font-size: 68px;
+}
+
+.stars, .moves {
+    display: inline;
+    padding-right: 5px;
+}
+
+.game-board {
+    grid-template-columns: 21.5vw 21.5vw 21.5vw 21.5vw;
+    grid-template-rows: 21.5vw 21.5vw 21.5vw 21.5vw;
+    height: 100vw;
+    grid-gap: 2vw;
+    padding: 4vw;
+    font-size: 30px;
+    border-radius: 2%;
+}
+
+.win-msg-container {
+    font-size: 8em;
+    align-items: center;
+}
+
+.win-msg {
+    margin-top: initial;
+}

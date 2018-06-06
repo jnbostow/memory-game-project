@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css?family=Ceviche+One');
+
+body {
+    position: relative;
+    margin: 0;
+}
+.game-container {
+    margin: auto;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+header {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 33% 33%;
+    grid-template-areas: 'title title title'
+                         'score timer redo-button';
+}
+
+h1 {
+    grid-area: title;
+    font-size: 48px;
+    font-family: 'Ceviche One', monospace;
+    margin: .5em .2em .2em .2em;
+}
+.score-panel {
+    grid-area: score;
+}
+
+.timer {
+    grid-area: timer;
+}
+
+.redo-button {
+    grid-area: redo-button;
+    cursor: pointer;
+}
+
+.stars {
+    display: inline;
+    text-align: center;
+    padding: 0;
+}
+
+.moves {
+    display: block;
+    white-space: nowrap;
+}
+
+
+.moves span::before {
+    content: attr(data-movescount);
+}
+
+.game-board {
+    display: grid;
+    position: relative;
+    grid-template-columns: auto auto;
+    grid-gap: 4vw;
+    height: 388vw;
+    padding: 4vw;
+    box-sizing: border-box;
+    font-size: 55px;
+    background: rgba(245,242,220,1);
+    background: linear-gradient(180deg, rgba(0,88,94,1) 0%, rgba(0,148,148,1) 23%, rgba(245,242,220,1) 89%);
+    margin: .75em 0 0 0;
+}
+
+.win-msg-container {
+    display: none;
+    list-style-type: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+    height:100%;
+    width: 100%;
+    background-color: rgba(69,68,69,.5);
+    color: #FF5729;
+    font-family: 'Ceviche One', monospace;
+    text-shadow: 1px 1px 1px rgb(245,242,220);
+    z-index: 5;
+}
+.game-card {
+    list-style-type: none;
+    perspective: 1200px;
+    color: rgba(245,242,220,1);
+}
+
+.perspective-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+[data-selected='true'] .perspective-container {
+    transform: rotateY(.5turn);
+    cursor: auto;
+}
+
+[data-selected='not-match'] .perspective-container {
+    transform: rotateY(1turn);
+}
+
+[data-selected='match'] .perspective-container {
+    transform: rotateY(.5turn);
+    cursor: auto;
+}
+
+.front-face, .back-face {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 8%;
+}
+
+.back-face {
+    background-color: #FF5729;
+    transform: rotateY(.5turn);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.front-face {
+    /*z-index: 2;*/
+    transform: rotateY(0turn);
+    background-color: #454445;
+
+}
+
+.win-game .perspective-container {
+    transform: rotateY(3turn);
+}
+
+.win-game.win-msg-container {
+    display: flex;
+    justify-content: center;
+    font-size: 5em;
+}
+
+.win-msg {
+    margin-top: 50vh;
+}
+
+.win-game-details {
+    font-size: 20px;
+    font-family: monospace;
+    text-shadow: none;
+    color: rgba(245,242,220,1);
+    display: block;
+}
+
+.win-game-details .score-panel {
+    display: inline-block;
+}
+
+.win-game-details .timer {
+    display: inline-block;
+}
+
+.win-msg button {
+    cursor: pointer;
+    padding: 10px 25px;
+    background: #FF5729;
+    color: rgb(245,242,220);
+    font-family: monospace;
+    font-size: 16px;
+    box-shadow: 0 0 12px 3px rgba(245,242,220,.5);
+    border-radius: 6px;
+}
+
+/*.win-msg-container .win-msg {*/
+    /*transition: transform 5s ease-in-out 3s;*/
+    /*-webkit-transition: transform 5s ease-in-out 3s;*/
+/*}*/
+
+/*.win-game.win-msg-container .win-msg {*/
+
+    /*transform: scale(5);*/
+/*}*/

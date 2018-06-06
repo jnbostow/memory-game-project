@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/medium-view.css" media="screen and (min-width: 400px)">
+    <link rel="stylesheet" href="styles/large-view.css" media="screen and (min-width: 700px)">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="game-container">
+    <header>
+        <h1>Memory Game</h1>
+        <div class="score-panel">
+            <ul class="stars">
+                <li class="fas fa-star"><span class="back-face"><i></i></span></li>
+                <li class="fas fa-star"><span class="back-face"><i></i></span></li>
+                <li class="fas fa-star"><span class="back-face"><i></i></span></li>
+            </ul>
+            <div class="moves"><span data-movescount="0"></span> Moves</div>
+        </div>
+        <div class="timer">00:00</div>
+        <i class="redo-button fas fa-redo"></i>
+    </header>
+
+    <div class='win-msg-container'>
+        <div class="win-msg">
+            Winner!
+            <div class="win-game-details"></div>
+            <button type="button">Play Again</button>
+        </div>
+    </div>
+
+    <ul class="game-board">
+        <li class='game-card'>
+            <div class="perspective-container">
+                <span class="front-face"></span>
+                <span class="back-face"><i></i></span>
+            </div>
+        </li>
+        <li class='game-card'>
+            <div class="perspective-container">
+                <span class="front-face"></span>
+                <span class="back-face"><i></i></span>
+            </div>
+        </li>
+        <li class='game-card'>
+            <div class="perspective-container">
+                <span class="front-face"></span>
+                <span class="back-face"><i></i></span>
+            </div>
+        </li>
+        <li class='game-card'>
+            <div class="perspective-container">
+                <span class="front-face"></span>
+                <span class="back-face"><i></i></span>
+            </div>
+        </li>
+
+        <li class='game-card'>
+            <div class="perspective-container">
+                <span class="front-face"></span>
+                <span class="back-face"><i></i></span>
+            </div>
+        </li>
+        <li class='game-card'>
+            <div class="perspective-container">
+                <span class="front-face"></span>
+                <span class="back-face"><i></i></span>
+            </div>
+        </li>
+        <li class='game-card'>
+            <div class="perspective-container">
+                <span class="front-face"></span>
+                <span class="back-face"><i></i></span>
+            </div>
+        </li>
+        <li class='game-card'>
+            <div class="perspective-container">
+                <span class="front-face"></span>
+                <span class="back-face"><i></i></span>
+            </div>
+        </li>
+
+        <li class='game-card'>
+            <div class="perspective-container">
+                <span class="front-face"></span>
+                <span class="back-face"><i></i></span>
+            </div>
+        </li>
+        <li class='game-card'>
+            <div class="perspective-container">
+                <span class="front-face"></span>
+                <span class="back-face"><i></i></span>
+            </div>
+        </li>
+        <li class='game-card'>
+            <div class="perspective-container">
+                <span class="front-face"></span>
+                <span class="back-face"><i></i></span>
+            </div>
+        </li>
+        <li class='game-card'>
+            <div class="perspective-container">
+                <span class="front-face"></span>
+                <span class="back-face"><i></i></span>
+            </div>
+        </li>
+
+        <li class='game-card'>
+            <div class="perspective-container">
+                <span class="front-face"></span>
+                <span class="back-face"><i></i></span>
+            </div>
+        </li>
+        <li class='game-card'>
+            <div class="perspective-container">
+                <span class="front-face"></span>
+                <span class="back-face"><i></i></span>
+            </div>
+        </li>
+        <li class='game-card'>
+            <div class="perspective-container">
+                <span class="front-face"></span>
+                <span class="back-face"><i></i></span>
+            </div>
+        </li>
+        <li class='game-card'>
+            <div class="perspective-container">
+                <span class="front-face"></span>
+                <span class="back-face"><i></i></span>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<script src="memory-game.js"></script>
+</body>
+</html>
