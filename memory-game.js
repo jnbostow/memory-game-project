@@ -62,7 +62,7 @@ function memoryGame() {
     //controller for game cards and tracks if they are a match
     function gameCardAction() {
         let prevSelectedCardElem = '';
-        let matchCount = 7;
+        let matchCount = 0;
 
         function action(event) {
             let currSelectedCardElem = event.currentTarget;
