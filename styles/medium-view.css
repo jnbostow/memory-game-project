@@ -11,12 +11,7 @@ h1 {
 }
 
 .game-board {
-    grid-template-columns: 21.5vw 21.5vw 21.5vw 21.5vw;
-    grid-template-rows: 21.5vw 21.5vw 21.5vw 21.5vw;
     height: 100vw;
-    grid-gap: 2vw;
-    padding: 4vw;
-    font-size: 30px;
     border-radius: 2%;
 }
 

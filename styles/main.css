@@ -55,13 +55,14 @@ h1 {
 
 .game-board {
     display: grid;
-    position: relative;
-    grid-template-columns: auto auto;
-    grid-gap: 4vw;
-    height: 388vw;
+    grid-template-columns: 21.5vw 21.5vw 21.5vw 21.5vw;
+    grid-template-rows: 21.5vw 21.5vw 21.5vw 21.5vw;
+    height: 100vw;
+    grid-gap: 2vw;
     padding: 4vw;
+    font-size: 30px;
+    position: relative;
     box-sizing: border-box;
-    font-size: 55px;
     background: rgba(245,242,220,1);
     background: linear-gradient(180deg, rgba(0,88,94,1) 0%, rgba(0,148,148,1) 23%, rgba(245,242,220,1) 89%);
     margin: .75em 0 0 0;
