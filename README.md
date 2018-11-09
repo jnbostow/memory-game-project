@@ -7,3 +7,8 @@ __**Project Description:**__ this project is to create a memory game with tiles 
 
 __**Scoring:**__ user has 3 stars that slowly reduce in number depending on the number of moves (pair of tiles clicked), before all tiles on the board to revealed with their matching pairs. 
 
+__**Instructions:**__ 
+1. In your terminal run `git clone git@github.com:jnbostow/memory-game-project.git`
+2. Navigate to the index.html file and open it up in a browser.
+3. That's it!
+
