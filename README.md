@@ -1,5 +1,7 @@
 # memory-game-project
-Frontend Development Udacity - Project 2
+this project was created as part of the Udacity Front-End Web Development Nanodegree - Project 2
+
+__**Preview Project:**__ https://htmlpreview.github.io/?https://github.com/jnbostow/memory-game-project/blob/master/index.html
 
 __**Project Description:**__ this project is to create a memory game with tiles in random order that a user can click on to reveal.  Each tile has a maching pair hidden until clicked.  Once a pair of tiles are clicked, if they are not the matching pair then they return to their hidden state.  The objective of the game to reveal and match all tiles.
 
